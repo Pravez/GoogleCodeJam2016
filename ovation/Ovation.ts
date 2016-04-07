@@ -11,7 +11,7 @@ export class Ovation {
         this.caseNumber = caseNumber;
 
         this.people = input[0];
-        for (let i = 1 ; i < this.people + 1 ; i++) {
+        for (let i = 1 ; i < input.length ; i++) {
             this.ovations[i - 1] = input[i];
         }
     }
@@ -20,12 +20,12 @@ export class Ovation {
         let missing = 0;
         let applausing = 0;
         for (let i = 0; i < this.people + 1 ; i++) {
-            applausing += this.ovations[i];
-            if (this.ovations[i] === 0 && applausing < i) {
+            if (applausing < i && this.ovations[i] > 0) {
                 missing ++;
                 applausing ++;
                 this.ovations[i] ++;
             }
+            applausing += this.ovations[i];
         }
         this.added = missing;
     }

@@ -1,8 +1,10 @@
 import {InputReader} from "./InputReader";
 import {Ovation} from "./Ovation";
-import {OutputWriter} from "./OutputWriter";
+import {OutputWriter} from "./../OutputWriter";
 
-let input = new InputReader(__dirname + "/input/A-small-practice.in");
+console.log("Reading and parsing ...");
+
+let input = new InputReader(__dirname + "/../input/A-small-practice.in");
 
 input.readFile();
 input.parseFile();
@@ -16,3 +18,5 @@ for (let i = 0; i < input.numberOfLines ; i++) {
 }
 
 OutputWriter.write();
+
+console.log("Done");
