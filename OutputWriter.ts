@@ -10,5 +10,6 @@ export class OutputWriter {
 
     static write() {
         fs.writeFileSync(this.filename, this.fileContent);
+        console.log(this.fileContent);
     }
 }
